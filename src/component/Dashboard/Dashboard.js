@@ -5,7 +5,9 @@ import { connect } from 'tls';
 import axios from 'axios';
 
 export default class Dashboard extends Component {
-
+    state = {
+        houses: []
+    }
 
     componentDidMount(){
         axios.get(`http://localhost:4000/houses`).then( res => {
@@ -15,9 +17,18 @@ export default class Dashboard extends Component {
             });
         });
     }
+
+    componentDidMount(){
+        axios.delete(`http://localhost:4000/houses`).then( res => {
+            console.log (res.data)
+            this.setState({
+                houses: res.data
+            });
+        });
+    }
     
     render(){
-
+        // let houses = this.state.houses.map( ())
         return(
             <div>
             <div>Dashboard</div>

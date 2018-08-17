@@ -33,10 +33,11 @@ massive({
   });
 
   
-app.get('/api/houses', controller.getHouses)
+app.get('/api/houses', controller.getHouses);
+app.post('/api/houses', controller.createHouses);
+app.delete('/api/houses/:id', controller.deleteHouses);
 
 
 
 
-
-app.listen(SERVER_PORT, () => console.log(`What a feeling on port ${SERVER_PORT}...ling`))
+app.listen(SERVER_PORT, () => console.log(`listening on port ${SERVER_PORT}`))
