@@ -1,3 +1,5 @@
+let houses = [];
+
 module.exports = {
     getHouses: (req, res, next) => {
         const db = req.app.get('db');
@@ -14,10 +16,10 @@ module.exports = {
     createHouses: ( req, res, next) => {
         let db = req.app.get('db');
         let { name, age, color } = req.body;
-
+        
 
         db.create_houses([ name, age, color ])
-            .then( resp => res.sendStatus(200) )
+            .then( () => res.sendStatus(200) )
             .catch( err => {
                 res.status(500).send({errorMessage: "Something bad with create"});
              

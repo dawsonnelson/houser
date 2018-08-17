@@ -15,6 +15,7 @@ const {
 const app = express();
 
 app.use(bodyParser.json());
+app.use( express.static('public') );
 // massive(CONNECTION_STRING).then(db => {
 //     app.set('db', db)
 // });
@@ -41,3 +42,8 @@ app.delete('/api/houses/:id', controller.deleteHouses);
 
 
 app.listen(SERVER_PORT, () => console.log(`listening on port ${SERVER_PORT}`))
+
+
+
+
+//ALTER TABLE houses ADD COLUMN image TEXT
