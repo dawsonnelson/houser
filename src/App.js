@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import route from './route';
-import {Link} from 'react-router-dom';
+
 
 
 import './App.css';
@@ -35,17 +35,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header />
-
-        
-        <button onClick={this.toggleHidden.bind(this)}>
-        <Link to='/wizard' className='links'>Add New Property</Link>
-        </button>
-        {/* {!this.state.isHidden} */}
-
-        <button onClick={this.toggleHidden.bind(this)}>
-        <Link to='/' className='links'>Cancel</Link>
-        </button>
+      
 
 
         {route}

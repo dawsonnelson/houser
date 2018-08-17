@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
 
 export default class Wizard extends Component {
     constructor(){
@@ -40,12 +41,18 @@ export default class Wizard extends Component {
 
         return(
             <div>
+            <button>
+            <Link to='/' className='links'>Cancel</Link>
+            </button>
+            <div>
                 <input placeholder='Address' onChange={ ( e ) => this.updateAddress( e.target.value ) } value={ this.state.addressInput }  />
                 <input placeholder='City' onChange={ ( e ) => this.updateCity( e.target.value ) } value={ this.state.cityInput }  />
                 <input placeholder='State' onChange={ ( e ) => this.updateState( e.target.value ) } value={ this.state.stateInput }  />
                 <input placeholder='Name' onChange={ ( e ) => this.updateName( e.target.value ) } value={ this.state.nameInput }  />
                 <input placeholder='Zipcode' onChange={ ( e ) => this.updateZipcode( e.target.value ) } value={ this.state.zipcodeInput }  />
             <div>Wizard</div>
+
+            </div>
 
             </div>
         )

@@ -30,10 +30,10 @@ massive({
     ssl: true
   }).then(function(db) {
     app.set('db', db);
-  })
+  });
 
   
-// app.get('/api/houses', controller.getHouses)
+app.get('/api/houses', controller.getHouses)
 
 
 
